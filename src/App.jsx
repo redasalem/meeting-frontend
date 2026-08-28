@@ -1,17 +1,19 @@
 import React from 'react'
-import { toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProtectedLayout from './components/ProtectedLayout';
 import Sessions from './pages/Sessions';
+import Pricing from './pages/Pricing';
+import MeetingRoom from './pages/MeetingRoom';
 
 
 function App() {
   return (
     <>
-    <toaster/>
+    <Toaster/>
     <Routes>
       <Route path= "/login" element={<Login mode="login"/>} />
 
@@ -27,7 +29,7 @@ function App() {
       <Route path='/meeting/:meetingId' element={<MeetingRoom/>}/>
       </Route>
       {/* other Routes */}
-      <Route path='*' element={<Navigate to={'dashboard'} replace />}/>
+      <Route path='*' element={<Navigate to={'/dashboard'} replace />}/>
 
     </Routes>
 
